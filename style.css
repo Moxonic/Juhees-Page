@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Arizonia);
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
 * {
     margin: 0;
@@ -24,17 +24,17 @@ body {
     position: relative;
     top: 0;
     min-height: 100%;
-    
 }
-.jmk{font-size: 3em;
+.jmk {
+    font-size: 3em;
 }
-.head{
+.head {
     background: rgb(5, 5, 68);
 }
 
 h1 {
     box-sizing: content-box;
-    font-family: 'Great Vibes', cursive;
+    font-family: "Great Vibes", cursive;
     color: rgb(252, 216, 216);
     background: rgb(5, 5, 68);
     padding: 16px 16px 16px 48px;
@@ -46,15 +46,14 @@ h1 {
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073, 0 0 25px #e60073,
+            0 0 30px #e60073, 0 0 35px #e60073;
     }
     to {
-        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        text-shadow: 0 0 10px #fff, 0 0 15px #ff4da6, 0 0 20px #ff4da6, 0 0 25px #ff4da6, 0 0 30px #ff4da6,
+            0 0 35px #ff4da6, 0 0 40px #ff4da6;
     }
 }
-
-
-
 
 #fader {
     position: fixed;
@@ -64,18 +63,28 @@ h1 {
     height: 100%;
     z-index: 999999;
     pointer-events: none;
-    background: gray;
-    animation-duration: 300ms;
+    background: black;
+    animation-duration: 500ms;
     animation-timing-function: ease-in-out;
 }
+
+
 @keyframes fade-out {
-    from { opacity: 1 }
-      to { opacity: 0 }
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 @keyframes fade-in {
-    from { opacity: 0 }
-      to { opacity: 1 }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #fader.fade-out {
@@ -88,58 +97,59 @@ h1 {
     animation-name: fade-in;
 }
 
-
-
-
-
-
-.navi{
+.navi {
     background-color: black;
 }
 
-.bg{
-    position:relative;
-    width:100%;
-    height:100%;
+.bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
-.vorhang{
-    position:absolute;
+.vorhang {
+    position: absolute;
     left: -20%;
-    background-size: 150vh ;
+    background-size: 150vh;
     background-position: 50%;
     height: 1vh;
 }
 
-#lightCont{
-    left:-50%;
+#lightCont {
+    left: -50%;
     position: absolute;
     height: 100%;
-    width: 100%;  
+    width: 100%;
 }
-.licht{
+.licht {
     position: absolute;
     /* height: 120%; */
     height: 100vh;
-    width:200%;
+    width: 200%;
 }
-#grabenCont{
-    left:-50%;
+#grabenCont {
+    left: -50%;
     position: absolute;
     height: 100%;
-    width: 100%;  
+    width: 100%;
 }
-.graben{
+.graben {
     position: absolute;
     height: 100vh;
-    width:200%;
-    background:linear-gradient(to top,rgba(255, 145, 0, 0.473)10%,rgba(255, 0, 0, 0)35%,rgba(255, 0, 0, 0)90%,rgba(0, 0, 0, 0.808)99%)
+    width: 200%;
+    background: linear-gradient(
+        to top,
+        rgba(255, 145, 0, 0.473) 10%,
+        rgba(255, 0, 0, 0) 35%,
+        rgba(255, 0, 0, 0) 90%,
+        rgba(0, 0, 0, 0.808) 99%
+    );
 }
-#dust{
+#dust {
     position: absolute;
     height: 100%;
     width: 100%;
     z-index: 100;
-    top: 19vh;              
+    top: 19vh;
 }
 #particles-js {
     position: absolute;
@@ -151,13 +161,17 @@ h1 {
     background-color: rgba(0, 0, 0, 0);
     z-index: 100;
 }
-.bioPeek{
+.bioPeek {
     height: 100vh;
 }
 /* The animation code */
 @keyframes slidepeek {
-    from {right: -100px;}
-    to {right: -3px;}
+    from {
+        right: -100px;
+    }
+    to {
+        right: -3px;
+    }
 }
 .portrait {
     position: absolute;
@@ -166,32 +180,36 @@ h1 {
     object-fit: cover;
     z-index: 300;
     animation-name: slidepeek;
-    animation-duration: 2s;   
+    animation-duration: 2s;
 }
-.about{ 
+.about {
     padding-left: 5cm !important;
     display: flex;
     justify-content: center; /* align horizontal */
-    top:10%;
+    top: 10%;
 }
 h5 {
     color: rgb(255, 255, 255);
     padding: 20px;
     background-color: rgb(0, 0, 0);
     border-radius: 8px;
-    height:5cm;
+    height: 5cm;
     top: 5cm;
     display: flex;
-    opacity:0;
+    opacity: 0;
     align-items: center; /* align vertical */
     animation-name: textappear;
-    animation-duration: 1s;   
+    animation-duration: 1s;
     animation-delay: 3s;
     animation-fill-mode: forwards;
 }
 @keyframes textappear {
-    from {opacity: 0;}
-    to {opacity:100;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
 }
 
 canvas {
@@ -199,7 +217,7 @@ canvas {
     /* ;vertical-align: bottom */
 }
 
-.socialMediaIcons{
+.socialMediaIcons {
     position: relative;
     color: whitesmoke;
     padding: 0.5em;
@@ -207,10 +225,10 @@ canvas {
     bottom: 0cm;
     /* size: 150%; */
 }
-.lightswitch{
-    color:rgb(255, 255, 255);
-    padding-right:16px;
-    background-color:rgb(5, 5, 68);
+.lightswitch {
+    color: rgb(255, 255, 255);
+    padding-right: 16px;
+    background-color: rgb(5, 5, 68);
     border: none;
     outline: none;
     -webkit-animation: glow 3s ease-in-out infinite alternate;
@@ -220,33 +238,41 @@ canvas {
     padding: 20px;
     align-self: center;
 }
-.lightSwitchBtn{
-    height: 32px; 
+.lightSwitchBtn {
+    height: 32px;
     border: none;
     outline: none;
-    
 }
 *:focus {
     outline: 0 !important;
 }
-@media screen and (max-width:768px) {
-     h1{
-        font-size: 2em ;
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2em;
         padding: 16px;
     }
-    h5{ font-size: 1em !important;
+    h5 {
+        font-size: 1em !important;
         padding: 8px;
     }
     .portrait {
         width: 170px;
     }
-    .jmk{
+    .jmk {
         font-size: 2em;
     }
-    .vorhang{
-    left: -140%;
+    .vorhang {
+        left: -140%;
     }
-    .about{ 
+    .about {
         padding-left: 0.5cm !important;
+    }
+}
+@media screen and (min-width: 2100px) {
+    .portrait {
+        width: 340px;
+    }
+    .vorhang {
+        left: -0%;
     }
 }

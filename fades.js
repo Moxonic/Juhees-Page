@@ -7,7 +7,11 @@ function fadeInPage() {
 
 document.addEventListener('DOMContentLoaded', function() {
     if (!window.AnimationEvent) { return; }
+    
+    fadeInPage()
+
     var anchors = document.getElementsByTagName('a');
+    
     for (var idx=0; idx<anchors.length; idx+=1) {
         if (anchors[idx].hostname !== window.location.hostname ||
             anchors[idx].pathname === window.location.pathname) {
