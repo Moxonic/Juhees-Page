@@ -24,23 +24,26 @@ body {
     position: relative;
     top: 0;
     min-height: 100%;
-    /* min-width: 100%; */
-
-    /* overflow: hidden; */
+    
+}
+.jmk{font-size: 3em;
+}
+.head{
+    background: rgb(5, 5, 68);
 }
 
 h1 {
     box-sizing: content-box;
     font-family: 'Great Vibes', cursive;
-    color: whitesmoke;
-    /* text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.226); */
+    color: rgb(252, 216, 216);
     background: rgb(5, 5, 68);
-    padding: 0.4em;
+    padding: 16px 16px 16px 48px;
     -webkit-animation: glow 3s ease-in-out infinite alternate;
     -moz-animation: glow 3s ease-in-out infinite alternate;
     animation: glow 2s ease-in-out infinite alternate;
     z-index: 200;
 }
+
 @keyframes glow {
     from {
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
@@ -48,24 +51,51 @@ h1 {
     to {
         text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
-    }
+}
 
-    .navi{
-       
-        background-color: black;
 
-    }
 
-/* .bioPeek {
-    position: relative;
-    background: linear-gradient(to right, rgba(255, 2, 2, 10%), rgb(17, 0, 255), rgb(255, 0, 200));
-    background-image: url("/curtain.jpg");
-    background-image: 
-        linear-gradient(to right, rgba(255, 2, 2, 0.582), rgba(58, 216, 255, 0.815), rgba(255, 0, 200, 0.719)), url("/curtain.jpg");
-    background-size: 250vh;
-    background-position: 50%;
-    height: 95vh;
-} */
+
+#fader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    pointer-events: none;
+    background: gray;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+}
+@keyframes fade-out {
+    from { opacity: 1 }
+      to { opacity: 0 }
+}
+
+@keyframes fade-in {
+    from { opacity: 0 }
+      to { opacity: 1 }
+}
+
+#fader.fade-out {
+    opacity: 0;
+    animation-name: fade-out;
+}
+
+#fader.fade-in {
+    opacity: 1;
+    animation-name: fade-in;
+}
+
+
+
+
+
+
+.navi{
+    background-color: black;
+}
 
 .bg{
     position:relative;
@@ -74,11 +104,12 @@ h1 {
 }
 .vorhang{
     position:absolute;
-    
-    /* background-size: 250vh; */
+    left: -20%;
+    background-size: 150vh ;
     background-position: 50%;
-    height: 100vh;
+    height: 1vh;
 }
+
 #lightCont{
     left:-50%;
     position: absolute;
@@ -87,15 +118,23 @@ h1 {
 }
 .licht{
     position: absolute;
-    height: 120%;
-    
-    /* background: linear-gradient(to right,black, rgba(255, 0, 0, 0.295), rgba(58, 216, 255, 0.37), rgba(255, 0, 200, 0.521),black); */
-    /* background: linear-gradient(to right,black, rgba(255, 1, 1, 0.295),black); */
+    /* height: 120%; */
     height: 100vh;
     width:200%;
-    }
+}
+#grabenCont{
+    left:-50%;
+    position: absolute;
+    height: 100%;
+    width: 100%;  
+}
+.graben{
+    position: absolute;
+    height: 100vh;
+    width:200%;
+    background:linear-gradient(to top,rgba(255, 145, 0, 0.473)10%,rgba(255, 0, 0, 0)35%,rgba(255, 0, 0, 0)90%,rgba(0, 0, 0, 0.808)99%)
+}
 #dust{
-   
     position: absolute;
     height: 100%;
     width: 100%;
@@ -112,18 +151,47 @@ h1 {
     background-color: rgba(0, 0, 0, 0);
     z-index: 100;
 }
+.bioPeek{
+    height: 100vh;
+}
+/* The animation code */
+@keyframes slidepeek {
+    from {right: -100px;}
+    to {right: -3px;}
+}
 .portrait {
     position: absolute;
     right: -3px;
-     width: 240px;
-     /* width: 140px; */
+    width: 230px;
     object-fit: cover;
-    z-index: 300;;
+    z-index: 300;
+    animation-name: slidepeek;
+    animation-duration: 2s;   
 }
-
+.about{ 
+    padding-left: 5cm !important;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    top:10%;
+}
 h5 {
-    color: gainsboro;
-    height: 100vh;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 8px;
+    height:5cm;
+    top: 5cm;
+    display: flex;
+    opacity:0;
+    align-items: center; /* align vertical */
+    animation-name: textappear;
+    animation-duration: 1s;   
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes textappear {
+    from {opacity: 0;}
+    to {opacity:100;}
 }
 
 canvas {
@@ -137,19 +205,48 @@ canvas {
     padding: 0.5em;
     z-index: 100;
     bottom: 0cm;
+    /* size: 150%; */
 }
 .lightswitch{
-    color:rgb(255, 0, 0);
+    color:rgb(255, 255, 255);
     padding-right:16px;
-    background-color: black;
+    background-color:rgb(5, 5, 68);
     border: none;
     outline: none;
+    -webkit-animation: glow 3s ease-in-out infinite alternate;
+    -moz-animation: glow 3s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate;
+    z-index: 1000;
+    padding: 20px;
+    align-self: center;
 }
 .lightSwitchBtn{
     height: 32px; 
     border: none;
     outline: none;
+    
 }
 *:focus {
     outline: 0 !important;
+}
+@media screen and (max-width:768px) {
+     h1{
+        font-size: 2em ;
+        padding: 16px;
+    }
+    h5{ font-size: 1em !important;
+        padding: 8px;
+    }
+    .portrait {
+        width: 170px;
+    }
+    .jmk{
+        font-size: 2em;
+    }
+    .vorhang{
+    left: -140%;
+    }
+    .about{ 
+        padding-left: 0.5cm !important;
+    }
 }
