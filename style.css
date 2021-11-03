@@ -8,7 +8,7 @@
 }
 p {
     margin: 5px 0 10px 0;
-    font-size: 35px !important;
+    font-size: 25px !important;
 }
 html,
 body {
@@ -163,6 +163,7 @@ h1 {
     z-index: 100;
 }
 .bioPeek {
+    position:relative;
     height: 100vh;
 }
 /* The animation code */
@@ -185,9 +186,10 @@ h1 {
     animation-duration: 2s;
     animation-fill-mode: forwards;
 }
-/* .helloCont{
+.helloCont{
     width:fit-content;
-} */
+    height:fit-content
+}
 .hello {
     position:absolute;
     height: fit-content;
@@ -313,17 +315,24 @@ canvas {
     .vorhang {
         left: -0%;
     }
-    .videos {
-        padding: 0.5rem;
-    }
+
 }
 
 /*PLAYER*/
-.videos{
-    background-color: black;
-    padding-left: 10%;
-    padding-right: 10%;
+
+.vidContCont{
+    width:80%;
+    margin: auto;
 }
-iframe{
-    height:60vh;
+.vidCont{
+    padding-top: 56.25%;        /*for 16:9 ratio*/
+    position: relative;
+    
+}
+.vidCont iframe {
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height:100%;
 }
