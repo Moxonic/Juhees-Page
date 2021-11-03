@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Arizonia);
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Great+Vibes&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +8,7 @@
 }
 p {
     margin: 5px 0 10px 0;
+    font-size: 35px !important;
 }
 html,
 body {
@@ -19,6 +20,7 @@ body {
     font-family: sans-serif;
     width: 100%;
     overflow: hidden;
+    font-family: 'Cormorant Garamond', serif;
 }
 #wrapper {
     position: relative;
@@ -31,50 +33,10 @@ body {
 .head {
     background: rgb(5, 5, 68);
 }
-/*FONTS*/
-/* h1 {
-    font-family: Optima, sans-serif;
-    font-size: 23px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
-    line-height: 23px;
-}
-h3 {
-    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
-    font-size: 17px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 700;
-    line-height: 23px;
-}
-p {
-    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
-    line-height: 23px;
-}
-blockquote {
-    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
-    font-size: 17px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
-    line-height: 23px;
-}
-pre {
-    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
-    font-size: 11px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
-    line-height: 23px;
-} */
-/*END FONTS*/
 h1 {
+    font-family: 'Cormorant Garamond', serif;
     box-sizing: content-box;
+    
     color: rgb(252, 216, 216);
     background: rgb(5, 5, 68);
     padding: 16px 16px 16px 48px;
@@ -86,7 +48,7 @@ h1 {
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 7px #e60073, 0 0 20px #e60073, 0 0 12px #e60073, 0 0 30px #e60073,
+        text-shadow: 0 0 0px #fff, 0 0 2px #fff, 0 0 4px #e60073, 0 0 8px #e60073, 0 0 12px #e60073, 0 0 12px #e60073,
             0 0 35px #e60073;
     }
     to {
@@ -206,7 +168,7 @@ h1 {
 /* The animation code */
 @keyframes slidepeek {
     from {
-        right: -100px;
+        right: -300px;
     }
     to {
         right: -3px;
@@ -214,33 +176,55 @@ h1 {
 }
 .portrait {
     position: absolute;
-    right: -3px;
+    right: -300px;
     width: 230px;
     object-fit: cover;
     z-index: 300;
     animation-name: slidepeek;
+    animation-delay: 1.5s;
     animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
-.about {
-    padding-left: 5cm !important;
-    display: flex;
-    justify-content: center; /* align horizontal */
-    top: 10%;
-}
-h5 {
-    color: rgb(255, 255, 255);
-    padding: 20px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 8px;
-    height: 5cm;
-    top: 5cm;
-    display: flex;
+/* .helloCont{
+    width:fit-content;
+} */
+.hello {
+    position:absolute;
+    height: fit-content;
+    left:50%;
     opacity: 0;
     align-items: center; /* align vertical */
     animation-name: textappear;
     animation-duration: 1s;
     animation-delay: 3s;
     animation-fill-mode: forwards;
+    border: 5px solid #61000044;
+    /* width:fit-content; */
+    margin: auto;           /*centers horizontally*/
+    top: 40%;
+    transform: translate(-50%, -50%);
+    margin:auto;
+    padding: 1em;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(114, 22, 19);
+}
+.contactText{
+    position: absolute;
+    left: 50%;
+    border: 5px solid #61000044;
+    width:fit-content;
+    margin: auto;           /*centers horizontally*/
+    top: 50%;
+    transform: translate(0, -50%);
+    vertical-align: middle;
+    text-align: center;
+    right:0;
+    left:0;
+    padding: 1em;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(114, 22, 19);
 }
 @keyframes textappear {
     from {
@@ -282,6 +266,10 @@ canvas {
     border: none;
     outline: none;
 }
+.contactfield{
+    position:absolute;
+    z-index: 1;
+}
 *:focus {
     outline: 0 !important;
 }
@@ -309,6 +297,14 @@ canvas {
     .licht {
         width: 250%;
     }
+    .jumbotron{
+        margin: 1em; 
+    }
+    .hello{
+        transform: translate(0, -50%);
+        left:1em;
+        right:3em;
+    }
 }
 @media screen and (min-width: 2100px) {
     .portrait {
@@ -317,9 +313,17 @@ canvas {
     .vorhang {
         left: -0%;
     }
+    .videos {
+        padding: 0.5rem;
+    }
 }
 
 /*PLAYER*/
+.videos{
+    background-color: black;
+    padding-left: 10%;
+    padding-right: 10%;
+}
 iframe{
     height:60vh;
 }
